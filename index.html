@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fawzi Mahboob</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+    :root {
+      --bg-color: #111;
+      --card-bg: rgba(40, 40, 40, 0.95);
+      --text-color: #f0f0f0;
+      --highlight: #f5c542;
+      --secondary-text: #ccc;
+      --skill-bg: #222;
+    }
+
+    body.light-mode {
+      --bg-color: #fafafa;
+      --card-bg: #ffffff;
+      --text-color: #111;
+      --highlight: #d19e00;
+      --secondary-text: #555;
+      --skill-bg: #f0f0f0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Tajawal", sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: auto;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+      width: 420px;
+      text-align: center;
+    }
+
+    .name {
+      font-size: 40px;
+      font-weight: bold;
+      background: linear-gradient(90deg, var(--highlight), #fffacd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(245, 197, 66, 0.4);
+    }
+
+    .animated-text {
+      font-size: 18px;
+      color: var(--highlight);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid var(--highlight);
+      width: 0;
+      animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+      margin-bottom: 20px;
+    }
+
+    .bio {
+      font-size: 16px;
+      color: var(--secondary-text);
+      margin-bottom: 25px;
+    }
+
+    ul.skills {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 25px 0;
+    }
+
+    ul.skills li {
+      background: var(--skill-bg);
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 10px;
+      transition: 0.4s;
+      font-weight: bold;
+    }
+
+    ul.skills li:hover {
+      background: var(--highlight);
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .social-links a {
+      display: inline-block;
+      background: var(--highlight);
+      color: black;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 30px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .social-links a i {
+      margin-right: 10px;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(245, 197, 66, 0.6);
+    }
+
+    form {
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #2b2b2b;
+      color: #fff;
+    }
+
+    body.light-mode form input,
+    body.light-mode form textarea {
+      background: #eaeaea;
+      color: #000;
+    }
+
+    form button {
+      width: 100%;
+      padding: 12px;
+      background: var(--highlight);
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background: var(--highlight);
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: var(--highlight); }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleMode()">تغيير النمط</button>
+  <div class="card">
+    <div class="animated-text">مرحباً بك في عالم فوزي الإبداعي!</div>
+    <h1 class="name">Fawzi Mahboob</h1>
+    <p class="bio">مطور واجهات ومصمم شغوف بالفن الرقمي والجمال البرمجي.</p>
+    <ul class="skills">
+      <li>تصميم واجهات احترافية</li>
+      <li>مواقع ديناميكية وتفاعلية</li>
+      <li>تحسين تجربة المستخدم</li>
+    </ul>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook"></i>Facebook</a>
+      <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+    </div>
+    <form>
+      <input type="text" placeholder="الاسم" required />
+      <input type="email" placeholder="البريد الإلكتروني" required />
+      <textarea rows="4" placeholder="رسالتك" required></textarea>
+      <button type="submit">إرسال</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("light-mode");
+      const mode = document.body.classList.contains("light-mode") ? "light" : "dark";
+      localStorage.setItem("siteTheme", mode);
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedMode = localStorage.getItem("siteTheme");
+      if (savedMode === "light") {
+        document.body.classList.add("light-mode");
+      }
+
+      const saved = localStorage.getItem("userData");
+      if (saved) {
+        const user = JSON.parse(saved);
+        console.log("بيانات محفوظة:", user);
+      }
+    });
+
+    document.querySelector("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = this.querySelector("input[type='text']").value;
+      const email = this.querySelector("input[type='email']").value;
+      const message = this.querySelector("textarea").value;
+
+      if (name && email && message) {
+        localStorage.setItem("userData", JSON.stringify({ name, email, message }));
+        alert("تم إرسال رسالتك بنجاح يا " + name + "!");
+        this.reset();
+      } else {
+        alert("يرجى ملء جميع الحقول.");
+      }
+    });
+  </script>
+</body>
+</html>
