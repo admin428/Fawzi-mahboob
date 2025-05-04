@@ -1,186 +1,128 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fawzi Mahboob</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #111;
-      color: #eee;
-      transition: background-color 0.5s, color 0.5s;
-    }
-    header {
-      background: linear-gradient(to right, #1f1f1f, #333);
-      padding: 1rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      animation: slidein 2s ease;
-    }
-    @keyframes slidein {
-      from {transform: translateX(-100%); opacity: 0;}
-      to {transform: translateX(0); opacity: 1;}
-    }
-    nav {
-      margin-top: 0.5rem;
-    }
-    nav button {
-      background: #444;
-      color: white;
-      padding: 0.5rem 1rem;
-      margin: 0 0.2rem;
-      border: none;
-      cursor: pointer;
-      border-radius: 20px;
-    }
-    .section {
-      padding: 2rem;
-      text-align: center;
-    }
-    .hidden {
-      display: none;
-    }
-    .gallery img {
-      width: 200px;
-      margin: 10px;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.1);
-    }
-    .contact-form input, .contact-form textarea {
-      width: 80%;
-      padding: 0.5rem;
-      margin: 0.5rem auto;
-      display: block;
-      border-radius: 5px;
-      border: none;
-    }
-    .contact-form button {
-      padding: 0.5rem 1rem;
-      border: none;
-      background: teal;
-      color: white;
-      border-radius: 5px;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #222;
-      margin-top: 2rem;
-    }
-    .counter {
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-    .theme-toggle {
-      float: right;
-      margin-right: 10px;
-      margin-top: -2.5rem;
-    }
-    .theme-toggle input {
-      width: 40px;
-      height: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fawzi Mahboob | موقع تعليمي واحترافي</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* إضافة بعض التنسيقات الأساسية */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #2a3d55;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        .services, .affiliate, .donations, .ads-section {
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .ads-banner {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .contact-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-links a {
+            margin: 10px;
+            font-size: 24px;
+            color: #2a3d55;
+            text-decoration: none;
+        }
+
+        .contact-links a:hover {
+            color: #ff6600;
+        }
+
+        .affiliate-link {
+            color: #ff6600;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Fawzi Mahboob</h1>
-    <div class="theme-toggle">
-      <label>
-        <input type="checkbox" id="themeSwitch" />
-      </label>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>مرحبًا بك في موقع فوزي محبوب</h1>
+        <p>موقع تعليمي وديناميكي يقدم لك أفضل المحتوى والخدمات.</p>
     </div>
-    <nav>
-      <button onclick="showSection('home')">الرئيسية</button>
-      <button onclick="showSection('about')">من أنا</button>
-      <button onclick="showSection('gallery')">معرض الصور</button>
-      <button onclick="showSection('contact')">تواصل</button>
-    </nav>
-  </header>
 
-  <div id="home" class="section">
-    <h2>مرحبًا بك في موقعي</h2>
-    <p>هذا الموقع تم تصميمه ليكون تفاعليًا وديناميكيًا بالكامل باستخدام HTML وCSS وJavaScript.</p>
-    <div class="counter">عدد زياراتك: <span id="visitCount">0</span></div>
-  </div>
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- نبذة عني -->
+        <section class="about">
+            <h2>نبذة عني</h2>
+            <p>أنا فوزي محبوب، محترف في مجال الشبكات والتكنولوجيا. أقدم محتوى تعليمي عالي الجودة ودورات متخصصة لمساعدتك في تطوير مهاراتك.</p>
+        </section>
 
-  <div id="about" class="section hidden">
-    <h2>من أنا</h2>
-    <p>اسمي فوزي محبوب، مهتم بالتصميم والبرمجة. أحب تطوير مواقع ويب ديناميكية وأنيقة.</p>
-  </div>
+        <!-- خدماتي -->
+        <section class="services">
+            <h2>الخدمات التي أقدمها</h2>
+            <ul>
+                <li>دورات تدريبية عبر الإنترنت.</li>
+                <li>استشارات في مجال الشبكات.</li>
+                <li>مراجعات وتقارير فنية.</li>
+            </ul>
+        </section>
 
-  <div id="gallery" class="section hidden">
-    <h2>معرض الصور</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400" alt="مشروع 1" />
-      <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=400" alt="مشروع 2" />
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400" alt="مشروع 3" />
+        <!-- إعلانات (مكان مخصص للإعلانات) -->
+        <section class="ads-section">
+            <div class="ads-banner">
+                <h3>إعلانات</h3>
+                <p>هنا يتم عرض الإعلانات الخاصة بك</p>
+            </div>
+        </section>
+
+        <!-- تسويق بالعمولة -->
+        <section class="affiliate">
+            <h2>رابط التسويق بالعمولة</h2>
+            <p>اشترِ كتابًا إلكترونيًا عبر الرابط التالي، وستدعمني بعمولة صغيرة:</p>
+            <a href="https://www.amazon.com/dp/B08NJQ6XG7" class="btn affiliate-link" target="_blank">شراء الكتاب الآن</a>
+        </section>
+
+        <!-- التبرعات والاشتراك -->
+        <section class="donations">
+            <h2>ادعم الموقع بالتبرع</h2>
+            <p>إذا أحببت محتوى الموقع وتريد دعمه، يمكنك التبرع هنا:</p>
+            <a href="https://www.paypal.com/donate?hosted_button_id=XXXXXXXXX" class="btn">تبرع الآن</a>
+        </section>
+
+        <!-- روابط تواصل -->
+        <section class="contact-links">
+            <h2>تواصل معي</h2>
+            <a href="https://wa.me/+967736671197" target="_blank">واتساب</a>
+            <a href="https://t.me/+967736671197" target="_blank">تليجرام</a>
+            <a href="mailto:f736671197@gmail.com">جيميل</a>
+        </section>
     </div>
-  </div>
 
-  
-<div id="contact" class="section hidden">
-  <h2>تواصل معي</h2>
-  <div style="font-size: 2rem; display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
-    <a href="https://wa.me/967736671197" target="_blank" title="واتساب">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" width="40" />
-    </a>
-    <a href="https://t.me/+967736671197" target="_blank" title="تليجرام">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/telegram.svg" alt="Telegram" width="40" />
-    </a>
-    <a href="mailto:f736671197@gmail.com" target="_blank" title="Gmail">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" alt="Gmail" width="40" />
-    </a>
-  </div>
-</div>
-
-
-  <footer>
-    <p>© 2025 Fawzi Mahboob. جميع الحقوق محفوظة.</p>
-  </footer>
-
-  <script>
-    const sections = ['home', 'about', 'gallery', 'contact'];
-    function showSection(id) {
-      sections.forEach(sec => {
-        document.getElementById(sec).classList.add('hidden');
-      });
-      document.getElementById(id).classList.remove('hidden');
-    }
-
-    function handleSubmit(e) {
-      e.preventDefault();
-      document.getElementById('msg').textContent = "تم إرسال الرسالة بنجاح (وهميًا)";
-    }
-
-    let visits = localStorage.getItem('visitCount') || 0;
-    visits++;
-    localStorage.setItem('visitCount', visits);
-    document.getElementById('visitCount').textContent = visits;
-
-    const switcher = document.getElementById('themeSwitch');
-    switcher.addEventListener('change', () => {
-      if (switcher.checked) {
-        document.body.style.backgroundColor = "#fff";
-        document.body.style.color = "#000";
-      } else {
-        document.body.style.backgroundColor = "#111";
-        document.body.style.color = "#eee";
-      }
-    });
-  </script>
 </body>
 </html>
