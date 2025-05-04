@@ -125,22 +125,28 @@
   <div id="gallery" class="section hidden">
     <h2>معرض الصور</h2>
     <div class="gallery">
-      <img src="https://via.placeholder.com/200x150" alt="صورة 1" />
-      <img src="https://via.placeholder.com/200x150" alt="صورة 2" />
-      <img src="https://via.placeholder.com/200x150" alt="صورة 3" />
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400" alt="مشروع 1" />
+      <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=400" alt="مشروع 2" />
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400" alt="مشروع 3" />
     </div>
   </div>
 
-  <div id="contact" class="section hidden">
-    <h2>تواصل معي</h2>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
-      <input type="text" placeholder="اسمك" required />
-      <input type="email" placeholder="بريدك الإلكتروني" required />
-      <textarea rows="4" placeholder="رسالتك" required></textarea>
-      <button type="submit">إرسال</button>
-    </form>
-    <p id="msg"></p>
+  
+<div id="contact" class="section hidden">
+  <h2>تواصل معي</h2>
+  <div style="font-size: 2rem; display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
+    <a href="https://wa.me/967736671197" target="_blank" title="واتساب">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" width="40" />
+    </a>
+    <a href="https://t.me/+967736671197" target="_blank" title="تليجرام">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/telegram.svg" alt="Telegram" width="40" />
+    </a>
+    <a href="mailto:f736671197@gmail.com" target="_blank" title="Gmail">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" alt="Gmail" width="40" />
+    </a>
   </div>
+</div>
+
 
   <footer>
     <p>© 2025 Fawzi Mahboob. جميع الحقوق محفوظة.</p>
@@ -160,13 +166,11 @@
       document.getElementById('msg').textContent = "تم إرسال الرسالة بنجاح (وهميًا)";
     }
 
-    // Visit Counter
     let visits = localStorage.getItem('visitCount') || 0;
     visits++;
     localStorage.setItem('visitCount', visits);
     document.getElementById('visitCount').textContent = visits;
 
-    // Theme Switcher
     const switcher = document.getElementById('themeSwitch');
     switcher.addEventListener('change', () => {
       if (switcher.checked) {
